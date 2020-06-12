@@ -59,6 +59,13 @@ flutter:
     - assets/fog.png
     - assets/none.png
     - assets/city.jpg
+    - assets/drizzleback.jpg
+    - assets/fogback.jpg 
+    - assets/noneback.jpg 
+    - assets/sunback.jpg 
+    - assets/rainback.jpg 
+    - assets/thunderback.jpg 
+    - assets/snowback.jpg 
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

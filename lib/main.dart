@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:geo_app/screen/city_screen.dart';
 import 'package:geo_app/screen/loding_screen.dart';
 
 void main() {
@@ -13,9 +12,6 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
       home: LodingScreen(),
-      routes:  {
-        'cityScrren' : (context) => CityScreen(),
-      }, 
     );
   }
 }

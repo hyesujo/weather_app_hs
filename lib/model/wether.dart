@@ -39,22 +39,25 @@ String getWeatherImage(int condition) {
      return 'assets/none.png';
    }
 }
-// String getWBackgroundImage(int condition) {
-//   if (condition < 300) {
-//     return 'assets/drizzle.png';
-//   } else if (condition < 400) {
-//     return 'assets/rain.png';
-//   } else if (condition < 600) {
-//     return 'assets/snow.png';
-//    } else if (condition < 700) {
-//      return 'assets/fog.png';
-//    } else if (condition < 801) {
-//       return 'assets/travel1.jpg';
-//    } else if (condition < 200) {
-//       return 'assets/Thunderstorm.png';
-//    } else {
-//      return 'assets/none.png';
-//    }
-// }
+String getWBackgroundImage(int condition) {
+  if (condition < 300) {
+    return 'assets/drizzleback.jpg';
+  } else if (condition < 400) {
+    return 'assets/snowback.jpg';
+  } else if (condition < 600) {
+    return 'assets/rainback.jpg';
+   } else if (condition < 700) {
+     return 'assets/fogback.jpg';
+   } else if (condition < 800) {
+      return 'assets/travel1.jpg';
+   } else if (condition <= 804) {
+      return 'assets/sunback.jpg';
+   } else if (condition < 200) {
+      return 'assets/thunderback.jpg';
+   } else {
+     return 'assets/noneback.jpg';
+   }
+}
+
 
 }

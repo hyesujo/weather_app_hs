@@ -19,7 +19,7 @@ class _LocationScreenState extends State<LocationScreen> {
   int temperature;
   dynamic weatherImage;
   String city;
-
+  dynamic weatherBack;
 
   @override
   void initState() {
@@ -32,6 +32,7 @@ class _LocationScreenState extends State<LocationScreen> {
     double temp = weatherData['main']['temp'].toDouble();
      temperature = temp.toInt();
      var condition = weatherData['weather'][0]['id'];
+    weatherBack = weathers.getWBackgroundImage(condition);
     weatherImage = weathers.getWeatherImage(condition);
     city = weatherData['name'];
      });
@@ -46,7 +47,7 @@ class _LocationScreenState extends State<LocationScreen> {
           decoration: BoxDecoration(
             color: Colors.grey[850],
             image: DecorationImage(
-                image: AssetImage('assets/travel1.jpg'),
+                image: AssetImage(weatherBack),
                 colorFilter:  ColorFilter.mode(
                     Colors.black.withOpacity(0.5), BlendMode.dstATop),
                 fit: BoxFit.cover),
