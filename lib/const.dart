@@ -12,3 +12,14 @@ var ktextStyle = TextStyle(
                  color: Colors.grey[100],
                );
 
+var kbuttonStyle = TextStyle(
+                 fontSize: 15,
+                 shadows: [
+                   Shadow(
+                     blurRadius: 10.0,
+                   color: Colors.black,
+                   offset: Offset(3.0, 3.0)
+                   ),
+                 ],
+                 color: Colors.grey[100],
+               );

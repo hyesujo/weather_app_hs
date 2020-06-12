@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../const.dart';
+
 class CityScreen extends StatelessWidget {
   static const String routeName ='/cityScreen';
 
@@ -14,6 +16,8 @@ class CityScreen extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/city.jpg'),
+             colorFilter: ColorFilter.mode(
+              Colors.black.withOpacity(0.7), BlendMode.dstATop),
             fit: BoxFit.cover,
             )
         ),
@@ -40,6 +44,18 @@ class CityScreen extends StatelessWidget {
                 autofocus: true,
               ),
             ),
+            FlatButton(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                    side: BorderSide(color: Colors.white)),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text(
+                  'Click here',
+                  style: kbuttonStyle,
+                ),
+              )
           ],
           ),
         ),
