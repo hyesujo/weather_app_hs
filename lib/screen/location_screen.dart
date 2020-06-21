@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 
 class LocationScreen extends StatelessWidget {
   static const routeName = '/lacation';
+  
   final locationWeather;
   final WeatherModel weathers = WeatherModel();
 

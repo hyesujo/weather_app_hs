@@ -23,14 +23,18 @@ class NavigatorDrawer extends StatelessWidget {
             createDrawHeader(),
             createDrawBodyItem(icon: Icons.search,
             text:'search',
-            onTap: ()  {
-             Navigator.push(
+            onTap: () async {
+            var citysName = await Navigator.push(
               context, MaterialPageRoute(
               builder: (context) { 
                 return CityScreen();
               },
                ),
                ); 
+               if (citysName != null) {
+                var weatherData =await weathers.getCityWeather(citysName);
+                weather.updateUi(weatherData);
+               }
             },
             ),
             ],
