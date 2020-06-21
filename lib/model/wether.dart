@@ -41,9 +41,9 @@ String getWeatherImage(int condition) {
   if (condition < 300) {
     return 'assets/drizzle.png';
   } else if (condition < 400) {
-    return 'assets/rain.png';
-  } else if (condition < 600) {
     return 'assets/snow.png';
+  } else if (condition < 600) {
+    return 'assets/rain.png';
    } else if (condition < 700) {
      return 'assets/fog.png';
    } else if (condition < 800) {

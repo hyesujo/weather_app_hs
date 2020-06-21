@@ -16,7 +16,7 @@ class CityScreen extends StatelessWidget {
             image: DecorationImage(
           image: AssetImage('assets/city.jpg'),
           colorFilter: ColorFilter.mode(
-              Colors.black.withOpacity(0.7), BlendMode.dstATop),
+              Colors.black.withOpacity(0.6), BlendMode.dstATop),
           fit: BoxFit.cover,
         )),
         constraints: BoxConstraints.expand(),

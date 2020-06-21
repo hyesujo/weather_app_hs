@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geo_app/Provider/update_wearher.dart';
+import 'package:geo_app/screen/location_screen.dart';
 import 'package:geo_app/screen/loding_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData.dark(),
         home: LodingScreen(),
+        routes: {
+          LocationScreen.routeName: (ctx) => LocationScreen(),
+        },
       ),
     );
   }
