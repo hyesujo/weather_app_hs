@@ -7,14 +7,16 @@ import 'package:provider/provider.dart';
 
 class LocationScreen extends StatelessWidget {
   static const routeName = '/lacation';
-  
   final locationWeather;
   final WeatherModel weathers = WeatherModel();
-
+  
   LocationScreen({Key key, this.locationWeather});
 
   @override
   Widget build(BuildContext context) {
+  final String cityName = ModalRoute.of(context).settings.arguments;
+
+
     return ChangeNotifierProvider<UpdateWeather>(
       create: (context) => UpdateWeather()..updateUi(locationWeather),
       child: Consumer<UpdateWeather>(
@@ -39,12 +41,6 @@ class LocationScreen extends StatelessWidget {
                         height: 120,
                         width: 120,
                       ),
-                      // Image.asset(
-                      //   'assets/sun.png',
-                      //   alignment: Alignment.center,
-                      //   height: 120,
-                      //   width:120,
-                      // ),
                       SizedBox(height: 30),
                       Text(
                         '${weather.temperature}°',
@@ -58,21 +54,27 @@ class LocationScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                Positioned(
-                  child: AppBar(
-                    actions: <Widget>[
-                      IconButton(
-                          icon: Icon(Icons.near_me),
-                          onPressed: () async {
-                            var weatherData =
-                                await weathers.getLocationWeather();
-                            weather.updateUi(weatherData);
-                          })
-                    ],
-                    backgroundColor: Colors.transparent,
-                    elevation: 0,
+
+                      Positioned(
+                    child: AppBar(
+                      actions: <Widget>[
+                        IconButton(
+                            icon: Icon(Icons.near_me),
+                            onPressed: () async {
+                              var weatherData =
+                                  await weathers.getLocationWeather();
+                              weather.updateUi(weatherData);
+                               if (cityName != null) {
+                  var weatherData =await weathers.getCityWeather(cityName);
+                  weather.updateUi(weatherData);
+               }
+                            },
+                            )
+                      ],
+                      backgroundColor: Colors.transparent,
+                      elevation: 0,
+                    ),
                   ),
-                )
               ],
             ),
             drawer: Theme(

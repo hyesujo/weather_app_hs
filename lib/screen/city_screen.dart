@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:geo_app/screen/location_screen.dart';
 
 import '../const.dart';
 
 class CityScreen extends StatelessWidget {
   static const String routeName = '/cityScreen';
+  
 
   @override
   Widget build(BuildContext context) {
     final _mycontroller = TextEditingController();
     String cityName;
-
+    
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -27,6 +29,11 @@ class CityScreen extends StatelessWidget {
                 alignment: Alignment.topLeft,
                 child: FlatButton(
                   onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) => LocationScreen(),
+                      ),
+                    );
                     Navigator.pop(context);
                   },
                   child: Icon(Icons.arrow_back_ios, size: 30),
@@ -42,7 +49,7 @@ class CityScreen extends StatelessWidget {
                   controller: _mycontroller,
                   autofocus: true,
                   onChanged: (value) {
-                   cityName = value;
+                  cityName = value;
                   },
                 ),
               ),
@@ -65,3 +72,4 @@ class CityScreen extends StatelessWidget {
     );
   }
 }
+

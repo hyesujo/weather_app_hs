@@ -14,8 +14,8 @@ class NavigatorDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return 
-    Consumer<UpdateWeather>(builder: (context,weather,_)=>
+
+    return Consumer<UpdateWeather>(builder: (context,weather,_)=>
       Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -30,7 +30,8 @@ class NavigatorDrawer extends StatelessWidget {
                 return CityScreen();
               },
                ),
-               ); 
+               );
+               Navigator.pop(context);
                if (citysName != null) {
                 var weatherData =await weathers.getCityWeather(citysName);
                 weather.updateUi(weatherData);

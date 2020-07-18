@@ -5,6 +5,8 @@ import 'package:geo_app/screen/location_screen.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class LodingScreen extends StatefulWidget {
+   static const routeName = '/loding_screen';
+   
   @override
   _LodingScreenState createState() => _LodingScreenState();
 }
@@ -41,7 +43,7 @@ class _LodingScreenState extends State<LodingScreen> {
      child: SpinKitDoubleBounce(
        color: Colors.deepOrange,
        size: 50,
-     ),
+     ) ,
       ),
     );
   }
